@@ -1,0 +1,446 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+<head>
+    <title>
+        Administración de Servicios Generales
+    </title>
+</head>
+
+<style>
+    iframe {
+        border-radius: 1rem;
+    }
+    #canvas{
+        position: absolute;
+        left: 0px;
+
+    }
+
+</style>
+
+
+<div role="main">
+    <section data-bs-version="5.1" class="slider1 cid-t8PTk6P3CL" id="slider1-56" >
+    
+        <div class="carousel slide " fade="True" id="tc2jhI7qw3" data-ride="carousel" data-bs-ride="carousel"
+            data-interval="100000" data-bs-interval="100000">
+            <ol class="carousel-indicators">
+                <li data-slide-to="0"  class="active" data-target="#tc2jhI7qw3"
+                    data-bs-target="#tc2jhI7qw3"></li>
+                <li data-slide-to="1"  class="active" data-target="#tc2jhI7qw3"
+                    data-bs-target="#tc2jhI7qw3"></li>
+                
+               {% for x in myDocuments %}
+                <li data-slide-to="{{ forloop.counter }}+{{1}}" data-bs-slide-to="{{ forloop.counter }}+{{1}}" class="active" data-target="#tc2jhI7qw3"
+                    data-bs-target="#tc2jhI7qw3"></li>
+               
+                {% endfor %}
+                
+            </ol>
+            <div id="particles" class="carousel-inner">
+                <img id="AppConceptIndice" loading="lazy" data-src="{% static 'assets/images/App_Concept-17.png'%} " alt="Arte ASG" role="presentation">
+
+                <div class="carousel-item slider-image item active">
+                    <div class=" item-wrapper">
+                        <canvas id="canvas"></canvas>
+                        <!--<img class="d-block w-100" loading="lazy" type="webp" data-src="{% static 'assets/images/intro_asg-2.webp'%}"   alt="" data-slide-to="1" data-bs-slide-to="1">-->
+                        <!--<video autoplay = "true" muted = "true"  style = "width:100%; height:100%; object-fit: cover ;" class="d-block w-100" data-src="{% static 'assets/images/Intro_ASG.webm'%}"  alt="" data-slide-to="2" data-bs-slide-to="2">-->
+                        <!--<img class="d-block w-100" loading="lazy" data-src="{% static 'assets/images/Intro_ASG [MConverter.eu].webp'%}"   alt="" data-slide-to="0" data-bs-slide-to="0"> -->
+                        <img id="asglogo1" class="d-block w-100" loading="lazy"  alt="ASG Logo" role="presentation"
+                            data-src="{% static 'assets/images/Navidad_ASG_LogoWeb-01.png'%}" data-slide-to="0"
+                            >
+                           
+                           
+
+
+
+                    </div>
+                </div>
+
+                
+                <div class="carousel-item slider-image  ">
+                    <div class=" item-wrapper">
+                        <!--<img class="d-block w-100" loading="lazy" type="webp" data-src="{% static 'assets/images/intro_asg-2.webp'%}"   alt="" data-slide-to="1" data-bs-slide-to="1">-->
+                        <!--<video autoplay = "true" muted = "true"  style = "width:100%; height:100%; object-fit: cover ;" class="d-block w-100" data-src="{% static 'assets/images/Intro_ASG.webm'%}"  alt="" data-slide-to="2" data-bs-slide-to="2">-->
+                        <!--<img class="d-block w-100" loading="lazy" data-src="{% static 'assets/images/Intro_ASG [MConverter.eu].webp'%}"   alt="" data-slide-to="0" data-bs-slide-to="0"> -->
+                        <iframe width="560" height="550" src="https://www.youtube.com/embed/nxsHM0RUdg4" data-slide-to= 1  title="YouTube video player" frameborder="0" allow="accelerometer;  autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                       
+
+                    </div>
+                </div>
+                
+                
+                {% for x in myDocuments %}
+                <div class="carousel-item slider-image item" > 
+                    <div class="item-wrapper">
+                        <img  class="d-block w-100" loading="lazy" data-src={{x.archivo.url}}   alt="Imagen Informativa" data-slide-to="0" data-bs-slide-to="0">
+                        
+                    </div>
+                </div>
+            
+                {% endfor %}
+
+                
+          
+
+            </div>
+            <a class="carousel-control carousel-control-prev" role="button" data-slide="prev" data-bs-slide="prev"
+                href="#tc2jhI7qw3">
+                <span class="fa-solid fa-arrow-left" aria-hidden="true"></span>
+                <span class="sr-only visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control carousel-control-next" role="button" data-slide="next" data-bs-slide="next"
+                href="#tc2jhI7qw3">
+                <span class="fa-solid fa-arrow-right" aria-hidden="true"></span>
+                <span class="sr-only visually-hidden">Next</span>
+            </a>
+        </div>
+    </section>
+
+
+    <section data-bs-version="5.1" class="slider4 mbr-embla cid-t8Q6pyHEJe" id="slider4-57" style="margin-top: 10px;">
+
+        <div class="container">
+            <div class="position-relative text-center">
+                <div class="mbr-section-head">
+                    <h1 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Servicios</strong>
+                    </h1>
+
+                </div>
+
+
+                <div class="embla mt-4" data-skip-snaps="true" data-align="center" data-contain-scroll="trimSnaps"
+                    data-loop="true" data-auto-play-interval="5" data-draggable="true">
+                    <div class="embla__viewport container-fluid" style="margin-top: 2rem;">
+                        <div class="embla__container">
+
+
+                            <div class="embla__slide slider-image item"
+                                style="margin-left: 0rem; margin-right: 0rem; width: 100px;">
+                                <a href="https://registros.asg.pr.gov/Login" target="_blank">
+
+                                    <img style="height: 6rem; width: 6rem;" loading="lazy" alt="Registro Único de Licitadores"
+                                        data-src="{% static 'assets/images/70px_RUL.png'%}">
+                                    <div style="font-weight: 400; padding-top: 10px;">
+                                        RUL
+                                    </div>
+                                </a>
+                                <div style="font-weight: 400; padding-top: 10px;">
+
+                                </div>
+
+                            </div>
+
+                            
+                            <div class="embla__slide slider-image item active"
+                                style="margin-left: 0rem; margin-right: 0rem;">
+                                <a href="contratos">
+                                    <img style="height: 6rem;" loading="lazy" alt="Contratos"
+                                        data-src="{% static 'assets/images/70px_contratos.png'%}">
+                                    <div style="font-weight: 400; padding-top: 10px;">
+                                        Contratos
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="embla__slide slider-image item"
+                                style="margin-left: 0rem; margin-right: 0rem; width: 100px;">
+                                <a href="/comprasemergencias">
+
+                                    <img style="height: 6rem; width: 6rem;" loading="lazy" alt ="Compras de Emergencias"
+                                        data-src="{% static 'assets/images/70px_ComprasEmergencia.png'%}">
+                                    <div style="font-weight: 400; padding-top: 10px; height: 30px;">
+                                        Compras de Emergencias
+                                    </div>
+                                </a>
+                                <div style="font-weight: 400; padding-top: 10px;">
+
+                                </div>
+
+                            </div>
+
+                            
+
+                            <div class="embla__slide slider-image item"
+                                style="margin-left: 0rem; margin-right: 0rem; width: 100px;">
+                                <a href="https://registros.asg.pr.gov/Login" target="_blank">
+
+                                    <img style="height: 6rem; width: 6rem;" loading="lazy" alt ="RUP"
+                                        data-src="{% static 'assets/images/70px_RUP.png'%}">
+                                    <div style="font-weight: 400; padding-top: 10px;">
+                                        RUP
+                                    </div>
+                                </a>
+                                <div style="font-weight: 400; padding-top: 10px;">
+
+                                </div>
+
+                            </div>
+
+                            <div class="embla__slide slider-image item"
+                                style="margin-left: 0rem; margin-right: 0rem; width: 100px;">
+                                <a target="_blank"
+                                    href="https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsubastas.pr.gov%2FPages%2Fdefault.aspx&data=04%7C01%7Cjvillanueva%40asg.pr.gov%7C042924b45208472d8b3a08d9d5d7236d%7C218001ab211a461383532d796a192e16%7C0%7C0%7C637775942260250201%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=jjCpxLoTQcWc9fmsInQ5qI3qSDdIsHyni1McYCYUQ3w%3D&reserved=0">
+
+                                    <img style="height: 6rem; width: 6rem;" loading="lazy" alt = "Registro Único de Subastas"
+                                        data-src="{% static 'assets/images/70px_RUS.png'%}">
+                                    <div style="font-weight: 400; padding-top: 10px;">
+                                        RUS
+                                    </div>
+                                </a>
+                                <div style="font-weight: 400; padding-top: 10px;">
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="embla__slide slider-image item"
+                                style="margin-left: 0rem; margin-right: 0rem; width: 100px;">
+                                <a href="https://jedi.asg.pr.gov/#/Home/Landing" target="_blank">
+
+                                    <img style="height: 6rem; width: 6rem;" loading="lazy" alt = "JEDI"
+                                        data-src="{% static 'assets/images/70px_JEDI.png'%}">
+                                    <div style="font-weight: 400; padding-top: 10px;">
+                                        JEDI
+                                    </div>
+                                </a>
+                                <div style="font-weight: 400; padding-top: 10px;">
+
+                                </div>
+
+                            </div>
+
+                            <div class="embla__slide slider-image item"
+                                style="margin-left: 0rem; margin-right: 0rem; width: 100px;">
+                                <a href="/subastas">
+
+                                    <img style="height: 6rem; width: 6rem;" loading="lazy" alt="Licitaciones"
+                                        data-src="{% static 'assets/images/70px_ReformaDeCompras.png'%}">
+                                    <div style="font-weight: 400; padding-top: 10px;">
+                                        Reforma de Compras
+                                    </div>
+                                </a>
+                                <div style="font-weight: 400; padding-top: 10px;">
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                    <button class="embla__button embla__button--prev">
+                        <span class="fa-solid fa-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only visually-hidden visually-hidden">Previous</span>
+                    </button>
+                    <button class="embla__button embla__button--next">
+                        <span class="fa-solid fa-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only visually-hidden visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-bs-version="5.1" class="video1 cid-t8PLAvq7ra" id="avideo1-4x" style="margin-top: 10px;">
+
+        <h1 class="text-center" style="color:white;font-weight: 600;">Subastas en línea</h1>
+        <div class="align-center container" style="margin-top:20px">
+            <div class="row justify-content-center">
+                <div class="mbr-section-head col-12 col-lg">
+                    <div class="text-container">
+                        <div>
+                            <img id="youtubelogo" class="img-fluid" loading="lazy"
+                                data-src="{% static 'assets/images/70px_ASG Channel.png'%}" alt=""><br>
+                        </div>
+                        <h2 class=" text-center mbr-section-title mbr-fonts-style mb-0 display-5"><strong>Accede a
+                                nuestro canal de Youtube! </strong></h2>
+                        <div class=" text-center mbr-section-btn"><a class="btn btn-success display-3"
+                                href="https://www.youtube.com/channel/UC-7iqYS_S8CYnqcRzbzZtNQ" target="_blank"><span
+                                    class="fa-brands fa-youtube fa-fw "></span>&nbsp;Canal de Youtube </a></div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-8 col-video">
+                    <div class="box">
+                        <div class="mbr-media show-modal align-center" data-modal=".modalWindow">
+                            <img alt=""
+                                loading="lazy"
+                                data-src="{% static 'assets/images/screen-shot-2022-06-15-at-9.53.01-am-1688x836.png' %}">
+                            <div class="icon-wrap">
+                                <a class="text-primary" href="#" aria-label="Reproducir video de subasta."><span class="fa-solid fa-circle-play fa-4x"
+                                        style="color: rgb(255, 117, 0); fill: rgb(255, 117, 0);" aria-hidden="true" ></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="modalWindow" style="display: none;">
+                <div class="modalWindow-container">
+                    <div class="modalWindow-video-container">
+                        <div class="modalWindow-video" style="margin-top:3rem">
+                            <iframe  width="100%" height="80%" frameborder="0" allowfullscreen="1"
+                                data-src="https://www.youtube.com/watch?v=hmkdeA-4X2s&amp;t=4s" loading="lazy"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe>
+                        </div>
+                        <a class="close" role="button" data-dismiss="modal" data-bs-dismiss="modal">
+                            <span aria-hidden="true" class="fa-solid fa-xmark"></span>
+                            <span class="sr-only visually-hidden">Close</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section data-bs-version="5.1" class="video1 cid-t8PLAvq7ra" id="avideo1-4x"
+    style="margin-top:10px; background: #fafafa" >
+    <h1 class="text-center" style="color:black;font-weight: 600;">Contáctenos</h1>
+
+    <div class="align-center container" style="margin-top:20px">
+        <div class="row justify-content-center">
+            <div class="mbr-section-head col-12 col-lg">
+                <div class="text-container" style=" background-color: rgba(230, 230, 230, 0.47); border: 2px solid rgba(230, 230, 230, 0.47); text-align: center!important;">
+                    <div class="card-wrapper" style="margin-top: 30px;">
+                        <div class="image-wrapper">
+                            <span style="color:black;" class="fa-solid fa-phone fa-3x fa-fw"></span>&nbsp;
+                        </div>
+                        <div class="text-wrapper">
+                            <h2 style="color:black;" class="card-title mbr-fonts-style mb-1 display-5">
+                                <strong>Cuadro Telefónico</strong>
+                            </h2>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                <a style="color:black;" href="tel:7877597676"
+                                    class="text-underline">787-759-7676</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-wrapper" style="margin-top: 30px;">
+                        <div class="image-wrapper">
+                            <span style="color:black;" class="fa-solid fa-envelope fa-3x fa-fw"></span>&nbsp;
+                        </div>
+                        <div class="text-wrapper">
+                            <h2 style="color:black;" class="card-title mbr-fonts-style mb-1 display-5">
+                                <strong>Email</strong>
+                            </h2>
+                            <p class="mbr-text mbr-fonts-style display-7"><a href="mailto:asginfo@asg.pr.gov"
+                                    style="color:black;" class="text-underline">info@asg.pr.gov</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-8 col-video" style="display:block ; ">
+
+                <div class="google-map"><iframe style="border-radius:100px;" width=1000 height=500 frameborder="0"
+                        allowfullscreen="1" title="ASG-Youtube"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        allowfullscreen="1" loading="lazy" 
+                        data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.7658631667227!2d-66.06754269999999!3d18.4489369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb2f706e6f9673dd3!2sAdministraci%C3%B3n%20de%20Servicios%20Generales!5e0!3m2!1ses-419!2spr!4v1662125561916!5m2!1ses-419!2spr"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section data-bs-version="5.1" class="video1 cid-t8PLAvq7ra" id="avideo1-4x"
+        style=" margin-top: 10px; background: #000033;" >
+        <h1 class="text-center" style="color:white;font-weight: 600;">Redes Sociales</h1>
+
+        <div class="align-center container" style="margin-top:20px">
+            <div class="row justify-content-center">
+                <div class="mbr-section-head col-12 col-lg">
+                    <div class="text-container">
+                        <div>
+                            <img id="youtubelogo" class="img-fluid" loading="lazy"
+                                data-src="{% static 'assets/images/ASG_Logo fll.png'%}" alt=""><br>
+                        </div>
+                        <div class=" "><br>
+                            <h1 style="color:white "
+                                class="mbr-section-title text-center mbr-fonts-style mb-0 display-5"><strong>Síguenos en
+                                    nuestras redes sociales!</strong></h1>
+
+                        </div>
+                        <div class="icons text-center justify-content-center">
+
+                            <a href="https://www.facebook.com/ASGPUERTORICO" aria-label="Ir a la página de Facebook" target="_blank">
+                                <span id="socialicon" class="fa-brands fa-facebook-f fa-2x"  aria-hidden="true"></span>
+                            </a>
+
+
+                            <a href="https://twitter.com/asgpuertorico" aria-label="Ir a la página de Twitter" target="_blank">
+                                <span id="socialicon" class="fa-brands fa-twitter fa-2x"  aria-hidden="true"></span>
+                            </a>
+
+
+                            <a href="https://www.instagram.com/asgpuertorico" aria-label="Ir a la página de instagram" target="_blank">
+                                <span id="socialicon" class="fa-brands fa-instagram fa-2x"  aria-hidden="true"></span>
+                            </a>
+
+
+                            <a href="https://instagram.com/mobirise" aria-label="Ir a la página de Linked In" target="_blank">
+                                <span id="socialicon" class="fa-brands fa-linkedin fa-2x"  aria-hidden="true"></span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-8 col-video">
+                    <div class="box">
+                        <div class="mbr-media show-modal align-center" data-modal=".modalWindow"
+                            style="border: 1px solid rgba(226, 226, 226, 1);">
+                            <a class="twitter-timeline" data-width="100%" data-height="520" title="Adm. Servicios Generales de Puerto Rico (@ASGPUERTORICO)/Twitter"
+                                href="https://twitter.com/ASGPUERTORICO" aria-label="Twitter" ></a>
+                            <script async src="https://platform.twitter.com/widgets.js" aria-hidden="true" charset="utf-8"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    
+    <!--<div class="container">
+               
+                  <div class="row">
+                    <div class="col mb ">
+                        
+
+                       
+                        <div class="card-body d-flex justify-content-center" id="fb-root"></div>
+                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0" nonce="5HHarAZA"></script>
+                         
+                        <div class="fb-page" data-href="https://www.facebook.com/ASGPUERTORICO" data-tabs="timeline" data-width="500" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ASGPUERTORICO" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ASGPUERTORICO" style=" object-fit: fill ;overflow:hidden; min-width:400px">Facebook</a></blockquote></div>
+
+
+                    </div>
+                    
+                    <div class="col mb ">
+                        
+                            
+                            <div class="card-body d-flex justify-content-center">
+                              <a class="twitter-timeline" width="400" data-height="500" data-theme="light" href="https://twitter.com/ASGPUERTORICO?ref_src=twsrc%5Etfw">Tweets by ASGPUERTORICO</a> <script async src="https://platform.twitter.com/widgets.js" style=" border:none;overflow:hidden; min-width:400px" charset="utf-8"></script>
+                    </div>
+                  </div>
+                
+                  </div>
+                        </div></div>-->
+
+
+
+
+
+</div>
+{% endblock%}

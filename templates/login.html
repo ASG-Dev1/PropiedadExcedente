@@ -1,0 +1,90 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <title>
+        Iniciar Sesión
+    </title>
+</head>
+
+<div role="main">
+
+    <body id=loginbody>
+        <img id="AppConcept" loading="lazy" data-src="{% static 'assets/images/App_Concept-17.png'%} " alt="Arte ASG" role="presentation">
+
+      
+
+            <div class=" square-box d-flex justify-content-center align-items-center">
+                <div class="row ">
+                    <div class="col-6" style="margin-bottom: 3em; margin-top: 5em;">
+                        <div class="card  " id="logInCard">
+                            <div>
+
+                                <img alt="ASG Logo" id="myImg" loading="lazy" data-src="{% static 'assets/images/ASG_Logo fll.png'%} ">
+
+                            </div>
+
+                            <h1 class="card-header text-center"
+                                style="color:white; padding-top: 20px;
+                                padding-bottom: 10px;
+                                padding-left: 0px; font-size: xx-large; ">
+                                PRODIS</h1>
+
+                            <div>
+
+                                {% for message in messages %}
+                                <h2 class=" text-center"
+                                    style="text-shadow: 1px 1px 30px #ffffff; margin-top:30px; margin-left: 30px;
+                                    margin-right: 30px;color: red;">{{message}}
+                                </h2>
+                                {% endfor %}
+                            </div>
+
+                            <div class="card-body" style=" margin-top: 20px;">
+
+                                <form role="form" aria-label="Iniciar Sesión" action="" method="POST">
+                                    {% csrf_token %}
+                                    <label hidden id="username" for="username"> Nombre de usuario</label>
+                                    <input type="text" id = "username" name="username" placeholder="Nombre de Usuario"
+                                        class="form-control" aria-required = "true"
+                                        style="margin-top: 10px; border: 1px solid #d3d5d8 !important; background-color: rgba(255, 255, 255, 0.773);">
+                                    <label hidden id="password" for="password"> Contraseña </label>
+                                    <input type="password" id="password" name="password" placeholder="Contraseña" class="form-control" aria-required = "true"
+                                        style=" margin-top: 10px; border: 1px solid #d3d5d8 !important; background-color: rgba(255, 255, 255, 0.773)">
+
+                                        <div class="d-flex justify-content-center">
+                                            <button type="submit" class="btn" style="width: 100%; margin-top: 30px; color: black; background-color: #7cca2d;">
+                                              <i class="fa-solid fa-right-to-bracket fa-fw"></i>&nbsp;Log In
+                                            </button>
+                                          </div>
+                                          {% comment %} <div class="d-flex justify-content-center" style="margin-top: 10px;">
+                                            <a href="{% url 'account_reset_password' %}" style="color: white;">Olvidaste tu contraseña?</a>
+                                          </div> {% endcomment %}
+
+                                          
+                                          
+                                     
+
+                                    
+                                    
+                                </form>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+    </body>
+
+</div>
+    {% endblock %}

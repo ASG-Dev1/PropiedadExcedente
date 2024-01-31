@@ -1,0 +1,266 @@
+/* Div, Search andDropdown Css for Subastas */
+
+   .breadcrumb{
+    text-decoration: underline
+   }
+
+   .search{
+
+   position: relative;
+   box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+   margin-bottom: 40px;
+
+   }
+
+   .search input{
+
+    
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4;
+    
+
+   }
+
+
+   .search input:focus{
+
+    box-shadow: none;
+    border: 2px solid blue;
+
+
+   }
+
+   .search .fa-search{
+
+    position: absolute;
+    top: 20px;
+    left: 16px;
+
+   }
+
+   
+   .search button{
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 110px;
+    background: #7acc00;
+    font-weight: 300;
+    color: black
+    
+   }
+   
+
+  .content-box{
+      width: auto;
+  }
+  
+  table {
+      width:  100%;
+      border-collapse: separate;
+      min-width: 5px
+  }
+
+  
+  
+    
+  .scrollingTable {
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+    
+    #custom-html-1h nav {
+    
+   /*padding-right: 20px;
+    padding-left: 80px;*/
+    padding-bottom: 10px;
+    font-weight: 300;
+    
+    }
+
+    .nav2{
+      /*margin-left: -75px; */
+      padding-top:52px
+    }
+
+    
+    
+  #custom-html-1n div {
+    font-weight: 300;
+  }
+
+
+  #custom-html-1n h1 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 80px;
+    
+  }
+
+  
+
+  #custom-html-1n #myTable {
+    border-collapse: collapse;
+    /* Collapse borders */
+    /* Full-width */
+    border: 1px solid #ddd;
+    /* Add a grey border */
+    font-size: 18px;
+    /* Increase font-size */
+    
+  }
+  #custom-html-1n #myTable th,
+  #custom-html-1n #myTable td {
+    text-align: left;
+    /* Left-align text */
+    padding: 12px;
+    /* Add padding */
+  }
+  #custom-html-1n #myTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd;
+  }
+  #custom-html-1n #myTable tr.header,
+  #custom-html-1n #myTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+  }
+
+
+  .form-control {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    
+  }
+  .form-control > .mbr-iconfont {
+    font-size: 1rem;
+  }
+  .form-control:hover,
+  .form-control:focus {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.07) 0px 1px 3px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
+    border-color: #32058d1b !important;
+  }
+  .form-control:-webkit-input-placeholder {
+    font-weight: 300;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  .form-control:-webkit-input-placeholder > .mbr-iconfont {
+    font-size: 0.875rem;
+  }
+  blockquote {
+    border-color: #33058d;
+  }
+
+
+  /* BreadCrumb */
+
+  .breadcrumb{
+    
+      
+      padding: .75rem 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      background-color: #fafafa;
+      border: 2px solid rgb(236, 236, 236);
+      border-radius: .25rem;
+      box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  }
+  .nav1{
+    padding-top:52px
+  }
+ 
+ 
+  
+  /*
+Button
+
+.btn-primary,
+.btn-primary:active {
+  background-color: #33058d !important;
+  border-color: #33058d !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary.active {
+  color: #ffffff !important;
+  background-color: #150239 !important;
+  border-color: #150239 !important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.btn-primary.disabled,
+.btn-primary:disabled {
+  color: #ffffff !important;
+  background-color: #150239 !important;
+  border-color: #150239 !important;
+}
+
+.btn-primary-outline,
+.btn-primary-outline:active {
+  background-color: transparent !important;
+  border-color: transparent;
+  color: #33058d;
+}
+.btn-primary-outline:hover,
+.btn-primary-outline:focus,
+.btn-primary-outline.focus,
+.btn-primary-outline.active {
+  color: #150239 !important;
+  background-color: transparent!important;
+  border-color: transparent!important;
+  box-shadow: none!important;
+}
+.btn-primary-outline.disabled,
+.btn-primary-outline:disabled {
+  color: #ffffff !important;
+  background-color: #33058d !important;
+  border-color: #33058d !important;
+}
+*/
+  /*
+  #custom-html-1n .dropbtn {
+    background-color: #33058d;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  #custom-html-1n .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  #custom-html-1n .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  #custom-html-1n .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  #custom-html-1n .dropdown:hover .dropbtn {
+    background-color: #7ACC00;
+  }
+  
+  
+  /* End of Div, Search and Dropdown Css for Subastas */
+  
+  
+  
+  

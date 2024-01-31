@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<title>
+        PROdis {% block title %}{% endblock %} 
+    </title>
+	
+
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="{% static 'assets/img/ASG_Logo.png'%}" type="image/x-icon"/>
+	<link rel="canonical" href="https://appseed.us/admin-dashboards/django-dashboard-atlantis-dark">
+	<link title="fonts" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- Fonts and icons -->
+	<script src="{% static 'assets/js/plugin/webfont/webfont.min.js'%}"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], 
+			urls: ["{% static 'assets/css/fonts.min.css' %}"]},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet"  href="{% static 'assets/css/bootstrap.min.css'%}">
+	<link rel="stylesheet" href="{% static 'assets/css/atlantis.css'%}">
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link rel="stylesheet" href="{% static 'assets/css/demo.css' %}">
+
+    <!-- Specific Page CSS goes HERE  -->
+    {% block stylesheets %}{% endblock stylesheets %}
+
+</head>
+<body data-background-color="light">
+	<div class="wrapper">
+
+        {% include 'includes/navigation.html' %}
+
+        {% include 'includes/sidebar.html' %}
+
+		<div class="main-panel">
+			
+			{% block content %}{% endblock content %}
+
+			{% include 'includes/footer.html' %}
+
+		</div>
+        
+		{% if request.user.is_authenticated %}
+
+			<!-- Custom template | don't include it in your project! -->
+			{% include 'includes/configuration-plugin.html' %}
+
+		{% endif %}		
+
+	</div>
+	<head>
+		<script src="{% static 'assets/bootstrap/js/popper.min.js' %}"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+		<link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+	
+		{% include 'head.html' %}
+		
+	</head>
+
+
+	{% include 'includes/scripts.html' %}
+
+    <!-- Specific Page JS goes HERE  -->
+    {% block javascripts %}{% endblock javascripts %}
+
+</body>
+</html>

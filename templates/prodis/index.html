@@ -1,0 +1,160 @@
+{% extends "layouts/base.html" %}  {% block title %} Inventario {% endblock %}
+
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+{% load static %}
+{% block content %}
+
+
+<style>
+  .transparent-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .transparent-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  .transparent-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+  }
+  
+  .transparent-scrollbar:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  .bg-primary-gradient {
+    background: #1572e8 !important;
+    background: linear-gradient(168deg, #000033, #034810) !important;
+  }
+
+</style>
+<div class="content">
+  <div class="panel-header bg-primary-gradient">
+    <div class="page-inner py-5">
+      <div
+        class="d-flex align-items-left align-items-md-center flex-column flex-md-row"
+      >
+        <div>
+          <h2 class="text-white pb-2 fw-bold"> PROperty Digital Inventory System</h2>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <head>
+
+</head>
+
+
+
+<style>
+    #excedenteimg{
+        max-width: 700px;
+        height: 500px;
+    }
+</style>
+<div role="main">   
+    <section data-bs-version="5.1" class="pricing4 cid-sU9azlI3LU" id="pricing4-31">
+        
+        
+        <div class="container">
+            <div class="row">
+
+                {% if user.is_authenticated %}
+                <a href="excedenteuploader" class="btn btn-success display-4 justify-content-center align-center" id="logbutton"
+                 style="text-align: center; border-radius: 40px;"> <i
+                    class="fa-solid fa-square-plus fa-fw"></i> Crear propiedad</a>
+
+                {% endif %}
+            </div>
+            
+            <div class="row">
+                {% for x in autos %}
+                <div class="col-12 col-sm-6 col-lg-3 item features-image" style="margin-bottom:4rem">
+                    <div class="item-wrapper">
+                        <div class="">
+                            <img id ="excedenteimg" alt="Imagen de Auto"
+                                class="inner lazyload" loading="lazy" 
+                                src={{x.archivo.url}}>
+                        </div>
+
+                    </div>
+                    <p class="name mbr-fonts-style display-5">{{x.marca}}  {{x.modelo}} {{x.year}} 
+                        {% if user.is_authenticated %}
+                        <a style="float:right; margin-top:20px" href="/excedenteautodelete/{{x.vin}}"><i style="text-align: end;" class="fa-solid fa-trash"></i></a> 
+                        
+                        {% endif %}
+                    </p>
+                    <p class="price mbr-fonts-style display-7">Tablilla: {{x.tablilla}}
+                        
+                        <br>Color: {{x.color}} <br>S/N: {{x.vin}}<br>Cantidad:{{x.cantidad}}<br>Condición:
+                        {{x.condicion}}<br>Localización:{{x.localizacion}}
+                    </p>
+                </div>
+                {% endfor %}
+
+                {% for x in articulos %}
+                <div class="col-12 col-sm-6 col-lg-3 item features-image">
+                    <div class="item-wrapper">
+                        <div class="">
+                            <img id ="excedenteimg" alt="Imagen de Artículo"
+                                class="inner lazyload" loading="lazy"
+                                src={{x.archivo.url}}>
+                        </div>
+
+                    </div>
+                    <p class="name mbr-fonts-style display-5">{{x.nombrearticulo}} 
+                        {% if user.is_authenticated %}
+                        <a style="float:right; margin-top:20px" href="/excedentearticulodelete/{{x.articuloid}}"><i style="text-align: end;" class="fa-solid fa-trash"></i></a> </p></p>
+                        {% endif %}
+                        <p class="price mbr-fonts-style display-7">{{x.descripcion}}<br><br>S/N:1GNDU23147D162407<br>Cantidad: {{x.cantidad}}<br>Condición: {{x.condicion}}<br>Localización:
+                        {{x.localizacion}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+          <!-- Agregar la tabla de compras aquí -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+
+
+  
+</script>
+
+
+
+</body>
+</html>
+
+
+
+                
+                {% endblock javascripts %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
