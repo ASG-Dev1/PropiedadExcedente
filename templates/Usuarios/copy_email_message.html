@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Información de Invitación</title>
+</head>
+<body>
+    <p>ODI,</p>
+    
+    <p>Se ha creado un nuevo usuario con la siguiente información:</p>
+    
+    <ul>
+        <li>Nombre: {{ name }}</li>
+        <li>Correo Electrónico: {{ email }}</li>
+        <li>Nombre de Usuario: {{ username }}</li>
+        <li>Hora de Invitación: {{ invitation_time }}</li>
+    </ul>
+    
+    <p>Este correo electrónico es una copia de la invitación que se envió al usuario principal.</p>
+    
+    <p>Atentamente,</p>
+    <p>{{creador}}</p>
+</body>
+</html>

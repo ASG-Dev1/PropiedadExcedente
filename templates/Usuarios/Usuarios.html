@@ -1,0 +1,148 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<style>
+    .adjudicar-btn {
+        background-color: #ff7500 !important;
+        border-color: #ff7500 !important;
+        color: black !important;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 10px 20px;
+        text-align: center;
+        height: 45px; /* Agregar la propiedad height y ajustar el valor según tus necesidades */
+      }
+    .btn-secondar:hover, .btn-secondar:focus, .btn-secondar:active {
+        background-color: #ff7500 !important;
+        border-color: #ff7500 !important;
+        color: black !important;
+        font-weight: bold
+    }
+    
+    
+    .dropdown-menu {
+        background-color: rgba(0, 0, 0, 0.8); /* Cambiar el valor de alpha para ajustar la opacidad */
+        border-radius: 10px; /* Ajustar el valor para cambiar el radio de la esquina */
+    }
+
+    .mi-clase:not(:last-child) {
+        border-bottom-width: 0.2px;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(255, 255, 255, 0.06);
+        overflow: auto;
+        padding-bottom: 20px;
+      }
+      
+    
+    .btn {
+        padding: .65rem 1.4rem;
+        font-size: 14px;
+        opacity: 1;
+        border-radius: 20px;
+        }
+      
+
+    #excedenteimg{
+        object-fit: contain;
+        display:block;
+        max-width: 75px;
+        height: 3rem;
+    }
+
+    .avatar-title {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .avatar {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+    .h6{
+        font-size: 1rem;
+    }
+    .bg-primary-gradient {
+        background: #1572E8 !important;
+        background: linear-gradient(168deg, #000033, #034810) !important;
+        }
+    .btn-secondar {
+        background: rgba(255, 255, 255, 0) !important;
+        border-color: #fbfbfb !important;
+        color: white !important;
+        font-weight: bold
+    }
+</style>
+<div class="content">
+    <div class=" panel-header bg-primary-gradient">
+        <div class="page-inner py-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div>
+                    <h2 class="text-white pb-2 fw-bold">DEPO</h2>
+
+                </div>
+                <div class="ml-md-auto py-2 py-md-0">
+                   
+                    <a href="/usuariosAddUsuario"class="btn btn-white btn-border btn-secondar btn-round">Añadir Usuario</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col" style="padding-top: 2rem;">
+        <div class="card full-height" style="border-radius:20px" >
+            <div class="card-header">
+                <div class="card-head-row">
+                    <div class="card-title">Usuarios</div>
+
+                </div>
+            </div>
+            {% for x in usuarios%}
+
+           
+            
+            <div class="card-body mi-clase" >
+                <div class="d-flex">
+                   
+                    </div>
+                    
+                    <div class="flex-1 ml-3 pt-1">
+                        <h6 class="h6 text-uppercase fw-bold mb-1">{{x.nombre}} </h6>
+                        <span class="text-muted">{{x.puesto}}</span>
+                    </div>
+                    <div class="float-right pt-1">
+                        
+                       <a  style="float: right;" href="/usuarioseliminarusuario/{{x.usuario_id}}"><i
+                                                            class="fa-solid fa-trash" data-toggle="tooltip" data-placement="top" title="Eliminar"></i></a>
+                        <a style="float: right; margin-right: 20px;" href="/usuarioseditarusuario/{{x.usuario_id}}"><i
+                                                            class="fa-solid fa-pen" data-toggle="tooltip" data-placement="top" title="Editar"></i></a>
+                                                            <a style="float: right; margin-right: 20px;" href="/usuariosdetailsusuario/{{x.usuario_id}}"><i
+                                                                class="fa-solid fa-eye" data-toggle="tooltip" data-placement="top" title="Detalles"></i></a>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+            
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+
+
+{% endblock javascripts %}
