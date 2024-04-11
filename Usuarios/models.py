@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser,BaseUserManager
 from django.utils import timezone
+from django.utils.timezone import now
 import uuid
 
 
@@ -44,6 +45,7 @@ class Usuario(AbstractUser):
    
     password = models.CharField(max_length=255, blank=False)
     vigencia = models.DateField(blank=True, null=True)
+    activo = models.BooleanField(null=True,blank=True)
     objects = CustomUserManager()
     
     USERNAME_FIELD = 'username'
@@ -69,8 +71,17 @@ class Usuario(AbstractUser):
         else:
             self.is_staff = False
             self.is_superuser = False
+                # Si vigencia es None, se asume que no hay restricción de tiempo (podrías ajustar esto según tu lógica de negocio)
+        if self.vigencia is not None:
+            self.activo = now().date() <= self.vigencia
+        else:
+            self.activo = True  # o False, según lo que desees por defecto cuando no hay fecha de vigencia
+            super().save(*args, **kwargs)
 
         super().save(*args, **kwargs)
+
+
+
 
 def __str__(self):
     return str(self.agencia.nombre)

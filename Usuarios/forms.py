@@ -7,8 +7,9 @@ from django.forms import ModelForm
 
 class UsuarioFormParte1(forms.ModelForm):
     class Meta:
+        required_css_class = 'required'
         model = Usuario
-        fields = ('username', 'puesto', 'nombre', 'extension', 'Rol', 'email','vigencia')
+        fields = ('username', 'puesto', 'nombre', 'extension', 'Rol', 'email','vigencia','activo')
         labels = {
 
             'username': 'Nombre de usuario',
@@ -18,6 +19,7 @@ class UsuarioFormParte1(forms.ModelForm):
             'Rol': 'Rol:',
             'email': 'Correo electrónico',
             'vigencia':'vigencia',
+            'activo':'activo',
             
         }
         widgets = {
@@ -28,7 +30,7 @@ class UsuarioFormParte1(forms.ModelForm):
             'Rol': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Inserte agencia.', 'style': 'margin-top:10px'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Inserte propósito.', 'style': 'margin-top:10px'}),
             'vigencia': forms.SelectDateWidget(years=range(2015, 2030), attrs={'class': 'form-control', 'placeholder': 'Escoja una fecha', 'style': 'margin-top:10px'}),
-
+            'activo': forms.CheckboxInput(attrs={'required': False, 'class': 'form-control', 'style': 'margin-top:10px', 'value': 'True', 'id': 'activo', 'checked': 'False'}),
 
         }
 

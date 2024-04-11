@@ -1,0 +1,76 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+
+<head>
+    <title>
+        Eliminar Publicación
+    </title>
+</head>
+<div role="main">
+
+    <body id=loginbody>
+        <img id="AppConcept" loading="lazy" data-src="{% static 'assets/images/App_Concept-17.png'%} " alt="Arte ASG" role="presentation">
+
+        <div id="custom-html-1n">
+
+            <div class="container square-box d-flex justify-content-center align-items-center">
+                <div class="row ">
+                    <div class="col-6" style="margin-bottom: 3em; margin-top: 3em;">
+                        <div class="card  " id="logInCard">
+                            <div>
+
+                                <img alt = "ASG Logo" id="myImg" loading="lazy" data-src="{% static 'assets/images/ASG_Logo fll.png'%} ">
+
+                            </div>
+
+                            <h1 class="card-header text-center"
+                                style="color:white; margin-top:20px; padding-bottom: 0px;
+                                padding-left: 0px;font-size: xx-large; ">
+                                ¿Eliminar {{excedente.marca}} {{excedente.modelo}} {{excedente.year}} {{excedente.nombrearticulo}}? </h1>
+
+                            <div>
+
+                                {% for message in messages %}
+                                <h2 class=" text-center"
+                                    style="text-shadow: 1px 1px 30px #ffffff; margin-top:30px;color: red;">{{message}}
+                                </h2>
+                                {% endfor %}
+                            </div>
+
+                            <div class="card-body" style=" margin-top: 20px;">
+
+                                <form action="" aria-label="Eliminar" method="POST">
+                                    {% csrf_token %}
+
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn  "
+                                            style="width: 100%; margin-top: 30px; color:white; background-color:  #f50000; "
+                                            id="subtn"><i class="fa-solid fa-trash fa-fw"></i>&nbsp;Eliminar</button>
+                                    </div>
+
+
+                                </form>
+                                <div class="d-flex justify-content-center">
+                                    <button onClick="javascript:history.go(-1);" class="btn  "
+                                        style="width: 100%; margin-top: 10px; color:black; background-color:  #bababa; "
+                                        id="subtn"><i class="fa-solid fa-arrow-left fa-fw"></i>&nbsp;Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </body>
+</div>
+    {% endblock %}

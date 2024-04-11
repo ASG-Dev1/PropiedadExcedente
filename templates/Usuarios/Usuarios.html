@@ -119,7 +119,15 @@
                         <span class="text-muted">{{x.puesto}}</span>
                     </div>
                     <div class="float-right pt-1">
+                        <small style="{% if x.activo %} color: green !important; {% else %} color: red !important; {% endif %} margin-right:10px;" class="text-muted">
+                            {% if x.activo %}
+                                Activo
+                            {% else %}
+                                Inactivo
+                            {% endif %}
                         
+                    
+                    </small>
                        <a  style="float: right;" href="/usuarioseliminarusuario/{{x.usuario_id}}"><i
                                                             class="fa-solid fa-trash" data-toggle="tooltip" data-placement="top" title="Eliminar"></i></a>
                         <a style="float: right; margin-right: 20px;" href="/usuarioseditarusuario/{{x.usuario_id}}"><i
